@@ -25,23 +25,20 @@ Product.propTypes = {
   color: React.PropTypes.oneOf(['white', 'eggshell-white', 'salmon']).isRequired,
 
   weight: function(props, propName) {
-    const weight = props[propName]
+    const weighttt = props[propName]
 
-    if (isNaN(weight)) {
-      return new Error('Must be a number')
-    }
-
-    // if (typeof(weight) !== 'number') {
-    //   return new Error('Must be a number')
-    // }
-
-    if (weight < 80 || weight > 300) {
+    if (weighttt < 80 || weighttt > 300) {
       return new Error('Must be btwn 80 & 300')
     }
 
-    if (weight === undefined) {
+    if (weighttt === undefined) {
       return new Error('Can\'t be blank')
     }
+
+    if (isNaN(weighttt)) {
+      return new Error('Must be a number')
+    }
+    
   } // end customProp
 }
 
